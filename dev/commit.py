@@ -1,19 +1,20 @@
 import subprocess
 import os
 
-def get_next_version():
+def get_next_version(debug=False):
     version_path = os.path.join("src", "data", "version")
-    if os.path.exists(version_path):
+    if os.path.exists(version_path) and not debug:
         with open(version_path, "r") as f:
             current = f.readline().strip()
             if current.startswith('v'):
                 parts = current[1:].split('.')
                 parts[-1] = str(int(parts[-1]) + 1)
                 return f"v{'.'.join(parts)}"
-    return "v1.0.0"
+    return "developement"
 
 def update_version_and_push():
-    new_v = get_next_version()
+    new_v = get_next_version(True)
+
     commit_msg = input(f"New version will be {new_v}. Commit message: ").strip()
     
     target_dir = os.path.join("src", "data")

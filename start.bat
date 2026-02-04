@@ -16,8 +16,8 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-if exist "LICENSE" (
-    type "LICENSE"
+if exist "src\data\LICENSE" (
+    type "src\data\LICENSE"
     echo.
 ) else (
     echo [ERROR] LICENSE file not found.
