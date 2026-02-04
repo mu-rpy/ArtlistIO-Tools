@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 playwright = "*"
+gitpython = "*"
+requests = "*"
 
 [dev-packages]
 
