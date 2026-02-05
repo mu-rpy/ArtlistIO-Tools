@@ -27,9 +27,9 @@ def update_version_and_push():
     try:
         subprocess.run(["git", "add", "."], check=True)
         subprocess.run(["git", "commit", "-m", f"{new_v}: {commit_msg}"], check=True)
-        subprocess.run(["git", "tag", "-a", new_v, "-m", f"Release {new_v}"], check=True)
+        subprocess.run(["git", "tag", "-f", "-a", new_v, "-m", f"Release {new_v}"], check=True)
         subprocess.run(["git", "push", "origin", "main"], check=True)
-        subprocess.run(["git", "push", "origin", new_v], check=True)
+        subprocess.run(["git", "push", "origin", "--force", new_v], check=True)
         print(f"\nSuccessfully deployed {new_v}")
     except Exception as e:
         print(f"Error: {e}")
