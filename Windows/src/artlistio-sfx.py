@@ -4,8 +4,8 @@ from playwright.sync_api import sync_playwright
 arch = "64" if struct.calcsize("P") == 8 else "32"
 base_dir = os.path.dirname(os.path.abspath(__file__))
 CHROME_EXE_PATH = os.path.join(base_dir, "dependencies", f"chrome-win{arch}", "chrome.exe")
-FFMPEG_PATH = os.path.abspath(os.path.join("ffmpeg", "bin", "ffmpeg.exe"))
-AUDIO_DIR = os.path.normpath(os.path.join(base_path, "..", "output"))
+FFMPEG_PATH = os.path.abspath(os.path.join(base_dir, "dependencies", "ffmpeg", "bin", "ffmpeg.exe"))
+AUDIO_DIR = os.path.normpath(os.path.join(base_dir, "..", "output"))
 os.makedirs(AUDIO_DIR, exist_ok=True)
 
 def convert(aac_url, aac_name):
@@ -77,8 +77,11 @@ def get_aac_data(target_url):
         except Exception as e:
             print(f"Browser Error: {e}")
 
-        match = re.search(r'track/(.*?)/', target_url)
-        text_inside = match.group(1)
+        match = re.search(r'/(?:song|track|sfx)/(.*?)/(?:\d+)', target_url)
+        if match:
+            text_inside = match.group(1)
+        else:
+            text_inside = "downloaded_audio"
 
         browser.close()
         return aac_link, text_inside
