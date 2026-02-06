@@ -41,6 +41,7 @@ echo [PHASE 3] Configuring Python dependencies...
 pip install --quiet pipenv
 if exist "Pipfile" (
     echo [INFO] Running pipenv install...
+    py -m pip install pipenv
     pipenv install
 )
 
