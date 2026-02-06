@@ -3,17 +3,22 @@ import os
 
 def get_next_version(debug=False):
     version_path = os.path.join("src", "data", "version")
-    if os.path.exists(version_path) and not debug:
+    
+    if not debug and os.path.exists(version_path):
         with open(version_path, "r") as f:
             current = f.readline().strip()
             if current.startswith('v'):
-                parts = current[1:].split('.')
-                parts[-1] = str(int(parts[-1]) + 1)
-                return f"v{'.'.join(parts)}"
-    return "developement"
+                try:
+                    parts = current[1:].split('.')
+                    parts[-1] = str(int(parts[-1]) + 1)
+                    return f"Win-v{'.'.join(parts)}"
+                except ValueError:
+                    pass
+                    
+    return "Win-v1.0"
 
 def update_version_and_push():
-    new_v = get_next_version(True)
+    new_v = get_next_version()
 
     commit_msg = input(f"New version will be {new_v}. Commit message: ").strip()
     
