@@ -1,7 +1,7 @@
 27aa63ec1612cf4290b92be0d5aabe3e src\artlistio-vid.py
-8f1b518030bf27210ba614353f34298c src\artlistio-sfx.py
-fb8288b934e320f1d74a6617a5f19f11 src\updater.py
+d4b49662909517ca8d0ccc2f6121cead src\artlistio-sfx.py
+3503273c27974b2099c62f761f3dd794 src\updater.py
 eaf0263518178ca79a79d448cd739440 src\integrity.py
 275e1768f0843dad5aac0d04c3828ce5 Pipfile.lock
-acd84d4540bbc6f65bb044332c93966d Pipfile
-3af2d2e905b2d648d76bd21d8aa54c9c start.bat
+9b455a19bf79ae7559be6a438b3c7b88 Pipfile
+178ead26ec1fce824c2f7e082ed9f7ba start.bat

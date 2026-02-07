@@ -61,8 +61,8 @@ timeout /t 2 >nul
 cls
 :: Read version from src/version
 set "ver_val=Unknown"
-if exist "src\version" (
-    set /p ver_val=<"src\version"
+if exist "src\data\version" (
+    set /p ver_val=<"src\data\version"
 )
 
 echo [93m

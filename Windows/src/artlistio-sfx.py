@@ -79,9 +79,9 @@ def get_aac_data(target_url):
 
         match = re.search(r'/(?:song|track|sfx)/(.*?)/(?:\d+)', target_url)
         if match:
-            text_inside = match.group(1)
+            text_inside = match.group(1).split('/')[-1]
         else:
-            text_inside = "downloaded_audio"
+            text_inside = "latest"
 
         browser.close()
         return aac_link, text_inside
