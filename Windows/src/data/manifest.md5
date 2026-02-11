@@ -1,5 +1,6 @@
 f209b27149513033db74185eb1f100a9 Pipfile
 afa3e7150ee49cc307806fd947f89cf2 Pipfile.lock
+9c38938aa191612a291caac1a6dc7fdb readme.txt
 fc1135e219e475f6bfc89cecd7552d5a src/artlistio-sfx.py
 ce9dadb7957830cac5fb5f360f3224e1 src/artlistio-vid.py
 0270965f53ce499525e3f3f99fa6018e src/data/LICENSE
