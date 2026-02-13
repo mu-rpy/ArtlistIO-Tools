@@ -1,7 +1,7 @@
 ﻿# ArtlistIO Tools
 
 **Author:** Mu_rpy  
-**Platforms:** Windows, MacOS, ubuntu, archlinux.
+**Platforms:** Windows, MacOS, Linux.
 
 ArtlistIO is a simple tool to extract and convert `.m3u8` streams from websites to MP4 using FFmpeg and Playwright.  
 
@@ -45,6 +45,7 @@ Run `unzip linux.zip && chmod +x start.sh && ./start.sh`
 [License](src/data/LICENSE)
 
 Mu_rpy © 2026
+
 
 
 
