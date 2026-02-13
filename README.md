@@ -42,9 +42,10 @@ Run `unzip linux.zip && chmod +x start.sh && ./start.sh`
 
 ---
 
-[License](src/data/LICENSE)
+[License](LICENSE)
 
 Mu_rpy © 2026
+
 
 
 
